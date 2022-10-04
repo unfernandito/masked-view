@@ -44,7 +44,7 @@ using namespace facebook::react;
 
 - (void)setContentView:(UIView *)contentView
 {
-  [self setContentView:contentView];
+  [super setContentView:contentView];
   // RNCMaskedView expects that the first subview rendered is the mask.
   UIView *maskView = [self.reactSubviews firstObject];
   self.maskView = maskView;
