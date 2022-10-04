@@ -17,7 +17,11 @@
 #import <react/renderer/components/RNCMaskedViewSpec/RCTComponentViewHelpers.h>
 
 #import "RCTFabricComponentsPlugins.h"
+#else
+#import <UIKit/UIKit.h>
+#endif
 
+#ifdef RCT_NEW_ARCH_ENABLED
 using namespace facebook::react;
 
 @implementation RNCMaskedView {
@@ -38,8 +42,9 @@ using namespace facebook::react;
   return self;
 }
 
-- (void)didUpdateReactSubviews
+- (void)setContentView:(UIView *)contentView
 {
+  [self setContentView:contentView];
   // RNCMaskedView expects that the first subview rendered is the mask.
   UIView *maskView = [self.reactSubviews firstObject];
   self.maskView = maskView;
@@ -70,14 +75,6 @@ Class<RCTComponentViewProtocol> RNCMaskedViewCls(void)
 
 @end
 #else
-
-#import <UIKit/UIKit.h>
-#import <React/RCTView.h>
-
-@interface RNCMaskedView : RCTView
-
-@end
-
 @implementation RNCMaskedView
 
 - (void)didUpdateReactSubviews

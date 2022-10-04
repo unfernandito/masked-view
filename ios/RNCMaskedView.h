@@ -14,4 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 NS_ASSUME_NONNULL_END
 
 #endif /* NativeComponentExampleComponentView_h */
+#else
+#import <React/RCTView.h>
+
+@interface RNCMaskedView : RCTView
+
+@end
 #endif /* RCT_NEW_ARCH_ENABLED */
