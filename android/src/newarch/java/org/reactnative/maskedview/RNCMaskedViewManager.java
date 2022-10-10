@@ -16,7 +16,7 @@ import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.ViewManagerDelegate;
 import com.facebook.react.uimanager.ViewGroupManager;
 import com.facebook.react.uimanager.annotations.ReactProp;
-import com.facebook.react.viewmanagers.RNCMaskedViewwManagerInterface;
+import com.facebook.react.viewmanagers.RNCMaskedViewManagerInterface;
 import com.facebook.react.viewmanagers.RNCMaskedViewManagerDelegate;
 
 import java.util.ArrayList;
@@ -25,7 +25,7 @@ import java.util.Map;
 
 @ReactModule(name = RNCMaskedViewManagerImpl.NAME)
 public class RNCMaskedViewManager extends ViewGroupManager<RNCMaskedView> 
-              implements RNCMaskedViewwManagerInterface<RNCMaskedView> {
+              implements RNCMaskedViewManagerInterface<RNCMaskedView> {
   
   ReactApplicationContext mCallerContext;
   private final ViewManagerDelegate<RNCMaskedView> mDelegate;
